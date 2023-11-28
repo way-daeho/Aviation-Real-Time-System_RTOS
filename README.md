@@ -1,7 +1,7 @@
 # RTOS
 Aviation Realtime System - Hanseo Univ - RTOS
 
-한서대학교 항공소프트웨어공학과 항공 실시간시스템 실습
+한서대학교 항공소프트웨어공학과 항공 실시간시스템 실습\
 교재 : RTOS를 이용한 실시간 임베디드 시스템 디자인 - Qing Li, Caroline Yao
 
 실습환경
