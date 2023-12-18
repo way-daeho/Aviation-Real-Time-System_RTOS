@@ -1,8 +1,8 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<sys/mman.h>
-#include<native/task.h>
-#include<native/sem.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/mman.h>
+#include <native/task.h>
+#include <native/sem.h>
 
 #define STACK_SIZE 0
 #define TASKMODE 0
@@ -27,7 +27,7 @@ void tAC1()
 		printf("tAC1 Shared Resource Access!\ntAC1 is waiting to be acquired as a MUTEX.\n");
 		rt_sem_p(&sem_desc, TM_INFINITE);
 		printf("tAC1 : Acquire a Semaphore!\n");
-		printf("Shared Resource to Use -> Shared Resource 1, Value of Shared Resource 1: %d\nStart of use!\n",resource1);
+		printf("Shared Resource to Use -> Shared Resource 1, Value of Shared Resource 1: %d\nStart of use!\n", resource1);
 		resource1 -= 10;
 		printf("tAC1 Shared Resource Access!\nThe value of the current shared resource1 : %d\n", resource1);
 		rt_sem_v(&Sem_desc);
@@ -45,7 +45,7 @@ void tAC2()
 		printf("tAC2 Shared Resource Access!\ntAC2 is waiting to be acquired as a MUTEX.\n");
 		rt_sem_p(&sem_desc, TM_INFINITE);
 		printf("tAC2 : Acquire a Semaphore!\n");
-		printf("Shared Resource to Use -> Shared Resource 2, Value of Shared Resource 2: %d\nStart of use!\n",resource1);
+		printf("Shared Resource to Use -> Shared Resource 2, Value of Shared Resource 2: %d\nStart of use!\n", resource1);
 		resource2 -= 10;
 		printf("tAC2 Shared Resource Access!\nThe value of the current shared resource2 : %d\n", resource2);
 		rt_sem_v(&sem_desc);
@@ -63,7 +63,7 @@ void tAC3()
 		printf("tAC3 Shared Resource Access!\ntAC3 is waiting to be acquired as a MUTEX.\n");
 		rt_sem_p(&sem_desc, TM_INFINITE);
 		printf("tAC3 : Acquire a Semaphore!\n");
-		printf("Shared Resource to Use -> Shared Resource 1, Value of Shared Resource 1: %d\nStart of use!\n",resource1);
+		printf("Shared Resource to Use -> Shared Resource 1, Value of Shared Resource 1: %d\nStart of use!\n", resource1);
 		resource1 -= 10;
 		printf("tAC3 Shared Resource Access!\nThe value of the current shared resource1 : %d\n", resource1);
 		rt_sem_v(&sem_desc);
@@ -89,7 +89,7 @@ int main()
 	}
 
 	printf("tAC2 generation succeeded!\n");
-	
+
 	if (rt_task_create(&t3_desc, "tAC3", STACK_SIZE, tAC3PRIO, TASKMODE))
 	{
 		printf("tAC3 generation failed\n");
